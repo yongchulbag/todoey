@@ -8,9 +8,9 @@ class TaskTile extends StatefulWidget {
 class _TaskTileState extends State<TaskTile> {
   bool isChecked = false;
 
-  void ToggleCheckbox(bool newValue) {
+  void ToggleCheckbox(bool? newValue) { //bool뒤에 ? 추가
     setState(() {
-      isChecked = newValue;
+      isChecked = newValue ?? true; // ?? true 추가
     });
   }
 
@@ -27,7 +27,7 @@ class _TaskTileState extends State<TaskTile> {
 
 class CheckBoxWidget extends StatelessWidget {
   final bool isChecked;
-  final Function ToggleCheckbox;
+  final Function (bool?) ToggleCheckbox; // (bool?) 추가
 
   CheckBoxWidget(this.isChecked, this.ToggleCheckbox);
 
