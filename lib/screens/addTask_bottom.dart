@@ -29,14 +29,14 @@ class addTaskBottom extends StatelessWidget {
                 autofocus: true,
                 textAlign: TextAlign.center,
               ),
-              FlatButton(
+              TextButton(
                 child: Text(
                   'Add',
                   style: TextStyle(
                     color: Colors.white,
                   ),
                 ),
-                color: Colors.lightBlueAccent,
+                // color: Colors.lightBlueAccent,
                 onPressed: () {},
               ),
             ],
