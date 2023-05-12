@@ -11,15 +11,24 @@ class TasksList extends StatelessWidget {
       builder: (context, taskData, child){
         return ListView.builder(
           itemBuilder: (context, index) {
+            final task=taskData.tasks[index];
             return TaskTile(
-              taskTitle: taskData.tasks[index].name,
+              taskTitle: task.name,
               // 바꾸기전에 isChecked: widget.tasks[index].isDone, widget을 왜 붙여주는진 몰겠음, ㅋㅋ
-              isChecked: taskData.tasks[index].isDone,
+              isChecked: task.isDone,
               toggleCheckbox: (bool? newValue) {
+                taskData.toggleTask(task);
+
+
                 //bool뒤에 ? 추가
                 // setState(() {
                 //   widget.tasks[index].toggleDone(); // ?? true 추가
                 // });
+
+
+              },
+              longPressCallback: () {
+                taskData.deleteTask(task);
               },
             );
           },

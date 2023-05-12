@@ -16,12 +16,8 @@ class TasksScreen extends StatelessWidget {
         onPressed: () {
           showModalBottomSheet( //modalBottomSheet는 입력값을 Function으로 전달하는듯
               context: context,
-              builder: (context) => addTaskBottom((newTaskTitle) {
-                    // setState(() {
-                    //   tasks.add(Task(name: newTaskTitle));
-                    // });
-                    Navigator.pop(context);
-                  }));
+              builder: (context) => addTaskBottom(),
+          );
         },
       ),
       body: Column(
